@@ -1,16 +1,21 @@
 **1. Default Credentials**
+
 By default, RabbitMQ creates a user with the following credentials:
 Username: guest
 Password: guest
 The guest user can only connect to RabbitMQ when running on the same machine (localhost).
-2. Locating the Host
+
+**2. Locating the Host**
+
 The host for RabbitMQ depends on where the service is running:
 If running on the same machine, use:
 csharp
 Copy code
 var host = "localhost";
 If connecting remotely, use the machine's IP address or hostname where RabbitMQ is installed.
-3. Changing or Creating a New User
+
+**3. Changing or Creating a New User**
+
 To set up a custom username and password, follow these steps:
 
 Open RabbitMQ Command Prompt:
@@ -41,7 +46,8 @@ Delete Default guest User (Optional): For security reasons, you can remove the d
 cmd
 Copy code
 rabbitmqctl delete_user guest
-4. Configuration in C#
+
+**4. Configuration in C#**
 To connect your C# project to RabbitMQ, use the RabbitMQ.Client library. Here's an example of setting up the connection:
 
 csharp
@@ -74,7 +80,8 @@ using (var channel = connection.CreateModel())
                          body: body);
     Console.WriteLine(" [x] Sent {0}", message);
 }
-5. Checking Configuration in RabbitMQ Management Plugin
+
+**5. Checking Configuration in RabbitMQ Management Plugin**
 The RabbitMQ Management Plugin allows you to manage RabbitMQ users and settings through a web interface.
 
 Enable the Management Plugin: Run this command in the RabbitMQ Command Prompt:
@@ -92,7 +99,8 @@ Default password: guest
 Create/Modify Users:
 
 Go to the "Admin" tab to add or edit users.
-6. Testing the Connection
+
+**6. Testing the Connection**
 Ensure RabbitMQ is running and your credentials work by testing them through the Management UI or a simple script.
 
 Let me know if you need further assistance!
