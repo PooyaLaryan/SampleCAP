@@ -26,7 +26,7 @@ builder.Services.AddCap(option =>
 
     option.UseRedis(opt =>
     {
-        opt.Configuration = new StackExchange.Redis.ConfigurationOptions 
+        opt.Configuration = new StackExchange.Redis.ConfigurationOptions
         {
             SslHost = "localhost:6379",
         };

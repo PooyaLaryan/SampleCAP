@@ -8,9 +8,17 @@ namespace CapSubscriber
         [CapSubscribe("WeatherForecast")]
         public void HandleWeatherForecast(IEnumerable<WeatherForecast> weatherForecasts)
         {
+            Console.Clear();
             foreach (var item in weatherForecasts)
             {
-                Console.WriteLine(item.TemperatureC);
+                Console.WriteLine($@"
+TemperatureC = {item.TemperatureC}
+TemperatureF = {item.TemperatureF}
+Summary = {item.Summary}
+Date = {item.Date}
+-------------------------------
+"
+                    );
             }
         }
     }
