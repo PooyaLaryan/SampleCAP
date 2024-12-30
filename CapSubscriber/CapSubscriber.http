@@ -1,6 +1,6 @@
 @CapSubscriber_HostAddress = http://localhost:5212
 
-GET {{CapSubscriber_HostAddress}}/weatherforecast/
+GET {{CapSubscriber_HostAddress}}/CapSubscribe/
 Accept: application/json
 
 ###

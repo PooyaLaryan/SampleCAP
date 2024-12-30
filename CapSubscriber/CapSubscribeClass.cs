@@ -6,7 +6,7 @@ namespace CapSubscriber
     public class CapSubscribeClass : ICapSubscribe
     {
         [CapSubscribe("WeatherForecast")]
-        public void HandleOrderCreated(IEnumerable<WeatherForecast> weatherForecasts)
+        public void HandleWeatherForecast(IEnumerable<WeatherForecast> weatherForecasts)
         {
             foreach (var item in weatherForecasts)
             {

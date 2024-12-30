@@ -13,9 +13,28 @@ builder.Services.AddTransient<CapSubscribeClass>();
 
 builder.Services.AddCap(option =>
 {
-    option.UseInMemoryStorage();
-    option.UseInMemoryMessageQueue();
+    //
+    //option.UseInMemoryMessageQueue();
+
+    option.UseInMemoryStorage(); // Replace with SQL Server if needed
+    
+    //option.UseRabbitMQ(option =>
+    //{
+    //    option.UserName = "guest";
+    //    option.Password = "guest";
+    //    option.HostName = "localhost";
+    //});
+
+    option.UseRedis(opt =>
+    {
+        opt.Configuration = new StackExchange.Redis.ConfigurationOptions
+        {
+            SslHost = "localhost:6379",
+        };
+    });
+
     option.DefaultGroupName = "default";
+    //option.UseRedis();
 });
 
 var app = builder.Build();
