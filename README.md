@@ -1,4 +1,4 @@
-1. Default Credentials
+**1. Default Credentials**
 By default, RabbitMQ creates a user with the following credentials:
 Username: guest
 Password: guest
