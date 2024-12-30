@@ -5,7 +5,7 @@ namespace CapSubscriber
 {
     public class CapSubscribeClass : ICapSubscribe
     {
-        [CapSubscribe("WeatherForecast")]
+        [CapSubscribe("WeatherForecast", Group = "WebApi")]
         public void HandleWeatherForecast(IEnumerable<WeatherForecast> weatherForecasts)
         {
             Console.Clear();
@@ -19,6 +19,8 @@ Date = {item.Date}
 -------------------------------
 "
                     );
+
+                Console.WriteLine("WebApi End of consume");
             }
         }
     }
